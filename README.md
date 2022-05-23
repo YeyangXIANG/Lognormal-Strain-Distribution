@@ -20,7 +20,7 @@ Functions of the code
 Further Reference
 -----------------------------------------------------------------------------------------
 1. Strain obtained from Ncorr or VIC-2D. 
-Ncorr is recommended since it is robust and open-source. http://www.ncorr.com/
-
-2. Lognormal distribution of strain is described in the paper below:
-A. Tang, H. Liu, G. Liu, Y. Zhong, L. Wang, Q. Lu, J. Wang, Y. Shen, Lognormal Distribution of Local Strain: A Universal Law of Plastic Deformation in Material, Phys. Rev. Lett. 124 (2020) 155501.
+Ncorr is recommended since it is robust and open-source.  
+  http://www.ncorr.com/
+2. Lognormal distribution of strain is described in the paper below:  
+  A. Tang, H. Liu, G. Liu, Y. Zhong, L. Wang, Q. Lu, J. Wang, Y. Shen, Lognormal Distribution of Local Strain: A Universal Law of Plastic Deformation in Material, Phys. Rev. Lett. 124 (2020) 155501.
