@@ -2,7 +2,7 @@
 
 Suitable for users to fit and analyze the distribution of DIC-based strain in a easy way.
 
-Note, lognormal distribution is not recommanded for strain with a lot of negtive values.
+Note, lognormal distribution is not recommended for strain with a lot of negtive values.
 
 -----------------------------------------------------------------------------------------
 Running the code
