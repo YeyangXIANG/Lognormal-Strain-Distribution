@@ -1,6 +1,7 @@
 # Lognormal-Strain-Distribution
 
-Suitable for users to fit and analyze the distribution of DIC-based strain in a easy way.
+Suitable for users to fit and analyze the distribution of DIC-based strain in a easy way.  
+.txt files from VIC-2D or .mat file from Ncorr is required.
 
 Note, lognormal distribution is not recommended for strain with a lot of negtive values.
 
@@ -13,7 +14,7 @@ Just define the parameters (not mandatory) and click run.
 Functions of the code
 -----------------------------------------------------------------------------------------
 1. Plot strain maps based on Ncorr data.
-2. Fit and plot strain distribution based on lognormal distribution.
+2. Fit and plot strain based on lognormal distribution.
 3. Compare the fitting results with DIC data.
 
 -----------------------------------------------------------------------------------------
