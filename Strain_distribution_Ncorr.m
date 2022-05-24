@@ -39,16 +39,6 @@ catch
 end
 Strain = eval(StrainType);
 
-%% Read image files
-
-if isempty(dir('*.JPG'))
-    ImageFiles = dir('*.tif');
-else
-    ImageFiles = dir('*.JPG');
-end
-
-I_tmp = imread(ImageFiles(1).name);
-
 %% Create folder to save results
 
 disp(['Folder ' StrainType ' is created to save results'])
@@ -82,10 +72,10 @@ end
 for i = 1:length(Strain)
     figure(100)
     plotmap(Strain{i});
-    title(['Strain ' StrainType ', image ' ImageFiles(i+1).name(1:end-4)],'interpreter','latex');
+    title(['Strain ' StrainType ' number ' num2str(i)],'interpreter','latex');
     axis off
-    print(gcf,['Strain ' StrainType ', image ' ImageFiles(i+1).name(1:end-4)],'-dpng','-r400');
-    saveas(gcf,['Strain ' StrainType ', image ' ImageFiles(i+1).name(1:end-4)],'fig');
+    print(gcf,['Strain ' StrainType ' Number ' num2str(i)],'-dpng','-r400');
+    saveas(gcf,['Strain ' StrainType ' Number ' num2str(i)],'fig');
     close(100)
 end
 
@@ -146,8 +136,8 @@ for i = 1:length(Strain)
 % Nccorr
 % 	print(gcf,['Lognormal Strain ' StrainType ' image ' ImageFiles(i).name(1:end-4)],'-dpng','-r400');
 %     saveas(gcf,['Lognormal Strain ' StrainType ' image ' ImageFiles(i).name(1:end-4)],'fig');
-    print(gcf,['Lognormal Strain ' StrainType ', image ' ImageFiles(i+1).name(1:end-4)],'-dpng','-r400');
-    saveas(gcf,['Lognormal Strain ' StrainType ', image ' ImageFiles(i+1).name(1:end-4)],'fig');
+    print(gcf,['Lognormal Strain ' StrainType ' Number ' num2str(i)],'-dpng','-r400');
+    saveas(gcf,['Lognormal Strain ' StrainType ' Number ' num2str(i)],'fig');
     close(109)
 end
 
