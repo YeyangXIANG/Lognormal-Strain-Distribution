@@ -115,8 +115,8 @@ for i = 1:length(Strain)
     y_fit = pdf(pd(i),x);
     R2(i) = CalR2(y,y_fit);
     
-    % Sigma and median of strain
-    sigma(i) = pd(i).sigma;
+    % delta and median of strain
+    delta(i) = pd(i).sigma;
 %     strain_median(i) = exp(pd(i).mu);
     strain_median(i) = exp(pd(i).mu);
     
@@ -125,10 +125,10 @@ for i = 1:length(Strain)
     hold on;
     plot(x,y_fit,'r-','linewidth',2);
     hold off
-    title('Fit result of lognormal distribution')
+    title('Result of lognormal distribution')
     xlabel('Strain')
     ylabel('Probability density')
-    text(0.65,0.4,['\sigma = ' num2str(sigma(i))],'color','b','fontsize',15,'units','normalized');
+    text(0.65,0.4,['\delta = ' num2str(delta(i))],'color','b','fontsize',15,'units','normalized');
     text(0.65,0.5,['\epsilon_c = ' num2str(strain_median(i))],'color','b','fontsize',15,'units','normalized');
     text(0.65,0.6,['R^2 = ' num2str(R2(i))],'color','b','fontsize',15,'units','normalized');
     % xlim([min(x) max(x)]);
@@ -144,8 +144,8 @@ end
 %%%% Calculate error bar %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 for i = 1:length(ci)
     try
-        neg_sigma(i) = sigma(i) - ci{i}(1,2);
-        pos_sigma(i) = ci{i}(2,2) - sigma(i);
+        neg_sigma(i) = delta(i) - ci{i}(1,2);
+        pos_sigma(i) = ci{i}(2,2) - delta(i);
         neg_strain(i) = strain_median(i) - exp(ci{i}(1,1));
         pos_strain(i) = exp(ci{i}(2,1)) - strain_median(i);
     catch
@@ -155,7 +155,7 @@ end
 
 display('Finish fit lognormal distribution')
 
-%% Folder to save result's summary
+%% Folder to save the summary of results
 
 mkdir('Results');
 cd([DataPath '\' StrainType '\Results'])
@@ -165,17 +165,17 @@ cd([DataPath '\' StrainType '\Results'])
 %%%% Define strain of one image %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 x = strain_DIC_mean;
 
-%%%% sigma %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% delta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure
-% errorbar(x,sigma,neg_sigma,pos_sigma,'o')
-plot(x,sigma,'o','linewidth',1.5)
-ylim([0,max(sigma)*1.2])
+% errorbar(x,delta,neg_sigma,pos_sigma,'o')
+plot(x,delta,'o','linewidth',1.5)
+ylim([0,max(delta)*1.2])
 xlabel('Mean strain based on DIC')
-ylabel('\sigma of lognormal distribution')
+ylabel('\delta of lognormal distribution')
 ax.FontName = 'Times New Roman';
 boxaxes;
-print(gcf,['Results sigma ' StrainType],'-dpng','-r400');
-saveas(gcf,['Results sigma ' StrainType],'fig');
+print(gcf,['Results delta ' StrainType],'-dpng','-r400');
+saveas(gcf,['Results delta ' StrainType],'fig');
 
 %%%% Strain based on lognormal %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -235,7 +235,7 @@ display('Finish plot results')
 %% Save results
 
 SaveName = ['Strain_Statistics_' StrainType '.mat'];
-save(SaveName,'Strain','StrainType','strain_median','sigma','R2',...
+save(SaveName,'Strain','StrainType','strain_median','delta','R2',...
     'strain_DIC_median','strain_DIC_mean','strain_std')
 
 warning on
