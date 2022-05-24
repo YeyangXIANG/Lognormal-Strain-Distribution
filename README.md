@@ -20,7 +20,7 @@ Functions of the code
 -----------------------------------------------------------------------------------------
 Further Reference
 -----------------------------------------------------------------------------------------
-1. Strain obtained from Ncorr or VIC-2D.  
+1. Strain is obtained from Ncorr or VIC-2D.  
 Ncorr is recommended for further analysis since it is open-source.  
   http://www.ncorr.com/
 2. Lognormal distribution of strain is described in the paper below:  
