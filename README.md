@@ -8,7 +8,7 @@ Note, lognormal distribution is not recommended for strain with a lot of negtive
 -----------------------------------------------------------------------------------------
 Running the code
 -----------------------------------------------------------------------------------------
-Just define the parameters (not mandatory) and click run.
+Just define the parameters (optional) and click run.
 
 -----------------------------------------------------------------------------------------
 Functions of the code
