@@ -5,15 +5,18 @@ Suitable for users to fit and analyze the distribution of DIC-based strain in a 
 
 Note, lognormal distribution is not recommended for strain with a lot of negtive values.
 
+
 Running the code
 -----------------------------------------------------------------------------------------
 Just define the parameters (optional) and click run.
+
 
 Functions of the code
 -----------------------------------------------------------------------------------------
 1. Plot strain maps based on Ncorr data.
 2. Fit and plot strain based on lognormal distribution.
 3. Compare the fitting results with DIC data.
+
 
 Further Reference
 -----------------------------------------------------------------------------------------
