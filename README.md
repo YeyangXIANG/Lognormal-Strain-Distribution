@@ -3,7 +3,7 @@
 MATLAB code to fit and analyze the distribution of DIC-based strain in a easy way.  
 .txt files from VIC-2D or .mat file from Ncorr is required.
 
-Note, lognormal distribution is not recommended for strain with a lot of negtive values.
+`Note, lognormal distribution is not recommended for strain with a lot of negtive values.`
 
 
 Running the code
